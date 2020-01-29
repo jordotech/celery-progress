@@ -56,9 +56,9 @@ class ProgressRecorder(AbstractProgressRecorder):
 
 class Progress(object):
 
-    def __init__(self, task_id):
+    def __init__(self, task_id, **kwargs):
         self.task_id = task_id
-        self.result = AsyncResult(task_id)
+        self.result = AsyncResult(task_id, **kwargs)
 
     def get_info(self):
         if self.result.ready():
